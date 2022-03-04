@@ -2,7 +2,7 @@ const { auth, postReplyWithMedia, postReply  } = require('./config.js');
 
 const client = auth();
 
-client.stream('statuses/filter', { track: '#FilterMe' }, function (stream) {
+client.stream('statuses/filter', { track: '@rodrigotikka' }, function (stream) {
   console.log("Searching for tweets...");
 
   // when a tweet is found
@@ -12,8 +12,8 @@ client.stream('statuses/filter', { track: '#FilterMe' }, function (stream) {
 
     // check if tweet contains some media
     if (tweet.media_url) {
-      console.log("Replying to tweet with video.");
-      postReplyWithMedia(client, "./sample-media/video.mp4", tweet);
+      console.log("Replying to tweet with pic.");
+      postReplyWithMedia(client, "./sample-media/chu.jpg", tweet);
 
     } else {
       console.log("Tweet didn't provide media. Replying with message.");
